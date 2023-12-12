@@ -9,4 +9,5 @@ public abstract class Personagem {
         this.nome = nome;
         this.superpoder = superpoder;
     }
+
 }
