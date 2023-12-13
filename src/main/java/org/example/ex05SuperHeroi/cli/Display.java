@@ -1,5 +1,6 @@
 package org.example.ex05SuperHeroi.cli;
 
+import org.example.ex05SuperHeroi.exception.OpcaoInvalidaException;
 import org.example.ex05SuperHeroi.model.Heroi;
 import org.example.ex05SuperHeroi.model.Personagem;
 import org.example.ex05SuperHeroi.model.Vilao;
@@ -10,8 +11,9 @@ import java.util.Scanner;
 
 public class Display {
 
-    public static void main(String[] args) {
         List<Personagem> listaPersonagens = new ArrayList<>();
+
+    public void exibirMenu() throws OpcaoInvalidaException {
         Scanner scanner = new Scanner(System.in);
 
         int opcao;
@@ -40,7 +42,7 @@ public class Display {
                     System.out.println("Programa encerrado.");
                     break;
                 default:
-                    System.out.println("Opção inválida. Tente novamente.");
+                    throw new OpcaoInvalidaException("Opção inválida. Tente novamente.");
             }
         } while (opcao != 4);
         
